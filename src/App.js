@@ -1,26 +1,71 @@
 import React from 'react';
-import logo from './logo.svg';
+import About from './components/About';
+import coverImage from "../../assets/cover/cover-image.jpg";
 import './App.css';
+
+const categories = [
+  {
+    name: "commercial",
+    description:
+      "Photos of grocery stores, food trucks, and other commercial projects",
+  },
+  { name: "portraits", description: "Portraits of people in my life" },
+  { name: "food", description: "Delicious delicacies" },
+  {
+    name: "landscape",
+    description: "Fields, farmhouses, waterfalls, and the beauty of nature",
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Nav></Nav>
+      <main>
+        <About></About>
+      </main>
     </div>
+  );
+};
+
+function Nav() {
+
+  return (
+    <header>
+      <h2>
+        <a href="/">
+          <span role="img" aria-label="camera"> 📸</span> Oh Snap!
+        </a>
+      </h2>
+      <nav>
+        <ul className="flex-row">
+          <li className="mx-2">
+            <a href="#about">
+              About me
+            </a>
+          </li>
+          <li>
+            <span>Contact</span>
+          </li>
+          {categories.map((category) => (
+            <li
+              className="mx-1"
+              key={category.name}
+            >
+              <span onClick={categorySelected} >
+                {category.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
   );
 }
 
+function categorySelected() {
+  console.log("hello")
+}
+
+export default Nav;
 export default App;
