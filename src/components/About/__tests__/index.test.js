@@ -8,7 +8,11 @@ afterEach(cleanup);
 describe('About component', () => {
   // First Test
   it('renders', () => {
-    render(<About />);
+    render(<Nav
+      categories={categories}
+      setCurrentCategory={mockSetCurrentCategory}
+      currentCategory={mockCurrentCategory}
+    />);
   });
 
   // Second Test
