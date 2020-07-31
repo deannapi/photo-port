@@ -3,13 +3,14 @@
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <section>
-    <h1>
+    <h1
+      data-testid="h1tag"
+    >
       Contact me
     </h1>
     <form
       id="contact-form"
     >
-      // name input
       <div>
         <label
           for="name"
@@ -22,7 +23,6 @@ exports[`matches snapshot 1`] = `
           value=""
         />
       </div>
-      // email input
       <div>
         <label
           for="email"
@@ -35,7 +35,6 @@ exports[`matches snapshot 1`] = `
           value=""
         />
       </div>
-      // message text area
       <div>
         <label
           for="message"
@@ -48,6 +47,7 @@ exports[`matches snapshot 1`] = `
         />
       </div>
       <button
+        data-testid="btn"
         type="submit"
       >
         Submit
